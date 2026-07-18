@@ -24,11 +24,30 @@
     @media(max-width:900px){.links{display:none}.brand img{width:210px}.hero-grid,.split,.cta,.foot{grid-template-columns:1fr}.hero{min-height:auto;padding:72px 0}.cards,.quotes,.stats{grid-template-columns:1fr}.photo{min-height:330px}.cta h2{font-size:34px}}
   </style>
 </head>
+  <script>
+function openPeptideBooking() {
+    if (window.blvd) {
+        blvd.openBookingWidget({
+            urlParams: {
+                locationId: "a795157d-1c56-41b1-9555-60a54df7c63f",
+                path: "/cart/menu/Peptides/s_ab739947-afa2-4856-a8ae-7b53870222f3",
+                visitType: "SELF_VISIT"
+            }
+        });
+    } else {
+        console.error("Boulevard has not finished loading.");
+    }
+}
+</script>
 <body>
   <div class="top"><span>Medical Weight Loss • Peptide Wellness • Personalized Care</span><a href="tel:9852218707">Call: (985) 221-8707</a></div>
-  <header><nav class="nav"><a class="brand" href="#home"><img src="assets/belle-vie-logo.png" alt="Belle Vie Wellness logo"></a><div class="links"><a href="#services">Services</a><a href="#peptides">Peptides</a><a href="#why">Why Us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div><a class="btn" href="#book-now">Book Now</a></nav></header>
+  <header><nav class="nav"><a class="brand" href="#home"><img src="assets/belle-vie-logo.png" alt="Belle Vie Wellness logo"></a><div class="links"><a href="#services">Services</a><a href="#peptides">Peptides</a><a href="#why">Why Us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div><a href="#" class="btn" onclick="openPeptideBooking(); return false;">
+    Book Now
+</a></nav></header>
 
-  <main id="home" class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Concierge wellness care</div><h1>Look good. Feel good. Live beautifully.</h1><p>Belle Vie Wellness helps patients build sustainable health through medical weight loss, GLP-1 programs, peptide therapies, nutrition guidance, and ongoing support.</p><div class="actions"><a class="btn" href="#book-now">Book Free Consultation</a><a class="btn alt" href="#services">Explore Services</a></div></div><aside class="hero-card"><img src="assets/belle-vie-flower.png" alt="Belle Vie flower mark"><h2>Personalized care that goes beyond the shot.</h2><div class="check"><div><span>✓</span>GLP-1 weight loss options</div><div><span>✓</span>Peptide wellness programs</div><div><span>✓</span>Hands-on coaching and check-ins</div><div><span>✓</span>Compounded through licensed pharmacy partners</div></div></aside></div></main>
+  <main id="home" class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Concierge wellness care</div><h1>Look good. Feel good. Live beautifully.</h1><p>Belle Vie Wellness helps patients build sustainable health through medical weight loss, GLP-1 programs, peptide therapies, nutrition guidance, and ongoing support.</p><div class="actions"><a href="#" class="btn" onclick="openPeptideBooking(); return false;">
+    Book Now
+</a><a class="btn alt" href="#services">Explore Services</a></div></div><aside class="hero-card"><img src="assets/belle-vie-flower.png" alt="Belle Vie flower mark"><h2>Personalized care that goes beyond the shot.</h2><div class="check"><div><span>✓</span>GLP-1 weight loss options</div><div><span>✓</span>Peptide wellness programs</div><div><span>✓</span>Hands-on coaching and check-ins</div><div><span>✓</span>Compounded through licensed pharmacy partners</div></div></aside></div></main>
 
   <section id="services"><div class="wrap center"><div class="kicker">Our Services</div><h2 class="title">A modern wellness clinic built around your goals.</h2><p class="sub">From weight loss to energy, recovery, and long-term wellness, Belle Vie creates a plan that fits your body, lifestyle, and desired results.</p><div class="cards"><article class="card"><div class="icon">⚖</div><h3>Medical Weight Loss</h3><p>Provider-guided weight management using GLP-1 options, accountability, lifestyle coaching, and measurable progress tracking.</p></article><article class="card"><div class="icon">✦</div><h3>Peptide Wellness</h3><p>Targeted peptide programs designed to support recovery, inflammation response, body composition, skin health, performance, and vitality.</p></article><article class="card"><div class="icon">♡</div><h3>Longevity Support</h3><p>A whole-person approach to help patients improve energy, confidence, metabolic health, and quality of life.</p></article></div></div></section>
 
@@ -40,7 +59,9 @@
 
   <section id="faq" class="cream"><div class="wrap center"><div class="kicker">FAQ</div><h2 class="title">Common Questions</h2><div class="faq"><details><summary>Do you offer GLP-1 weight loss programs?</summary><p>Yes. Belle Vie Wellness can provide provider-guided medical weight loss options, including GLP-1 programs when clinically appropriate.</p></details><details><summary>Do you offer peptides?</summary><p>Yes. Belle Vie Wellness can offer peptide wellness programs in addition to weight loss services. All protocols should be discussed with a provider.</p></details><details><summary>Is this a one-size-fits-all program?</summary><p>No. The goal is a personalized plan based on your goals, progress, health history, and provider recommendations.</p></details><details><summary>How do I start?</summary><p>Book a consultation so the team can review your goals and recommend the right next step.</p></details></div></div></section>
 
-  <section id="contact"><div class="wrap"><div class="cta"><div><h2>Book your consultation today.</h2><p>Ready to feel better, look better, and live beautifully? Contact Belle Vie Wellness to start your personalized plan.</p></div><a class="btn" href="#book-now">Book Now</a></div></div></section>
+  <section id="contact"><div class="wrap"><div class="cta"><div><h2>Book your consultation today.</h2><p>Ready to feel better, look better, and live beautifully? Contact Belle Vie Wellness to start your personalized plan.</p></div><a href="#" class="btn" onclick="openPeptideBooking(); return false;">
+    Book Now
+</a></div></div></section>
 
   <footer><div class="wrap foot"><div><img src="assets/belle-vie-logo.png" alt="Belle Vie Wellness logo"><p>Medical weight loss, peptide wellness, and personalized support for a healthier, more confident life.</p></div><div><h4>Contact</h4><p>Phone: <a href="tel:9852218707">(985) 221-8707</a><br>Email: <a href="mailto:info@bellevwellness.com">info@bellevwellness.com</a><br>Address: 1808 Front St Ste 104 (located inside Sirincci Coffee Co)</p></div><div><h4>Quick Links</h4><p><a href="#services">Services</a><br><a href="#peptides">Peptides</a><br><a href="#why">Why Us</a><br><a href="#faq">FAQ</a><br><a href="#book-now">Book Now</a></p></div></div><div class="wrap"><div class="footer-links" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px"><a href="privacy-policy.html">Privacy Policy</a><a href="hipaa-notice.html">HIPAA Notice</a><a href="terms.html">Terms &amp; Conditions</a><a href="telehealth-consent.html">Telehealth Consent</a></div><div class="small">© 2026 Belle Vie Wellness. All Rights Reserved. This website is for informational purposes only and does not replace medical advice. Treatment eligibility requires evaluation by a licensed healthcare provider.</div></div></footer>
 
