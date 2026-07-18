@@ -24,6 +24,26 @@
     @media(max-width:900px){.links{display:none}.brand img{width:210px}.hero-grid,.split,.cta,.foot{grid-template-columns:1fr}.hero{min-height:auto;padding:72px 0}.cards,.quotes,.stats{grid-template-columns:1fr}.photo{min-height:330px}.cta h2{font-size:34px}}
   </style>
 </head>
+  <!-- Boulevard Self-Booking Overlay -->
+<script>
+  (function (a) {
+    var b = {
+      businessId: 'f0fcc55e-cf56-4222-ad6d-5a7b49a70218',
+    };
+
+    var c = a.createElement('script');
+    var d = a.querySelector('script');
+
+    c.src = 'https://static.joinboulevard.com/injector.min.js';
+    c.async = true;
+    c.onload = function () {
+      blvd.init(b);
+    };
+
+    d.parentNode.insertBefore(c, d);
+  })(document);
+</script>
+<!-- End Boulevard Self-Booking Overlay -->
 <body>
   <div class="top"><span>Medical Weight Loss • Peptide Wellness • Personalized Care</span><a href="tel:9852218707">Call: (985) 221-8707</a></div>
   <header><nav class="nav"><a class="brand" href="#home"><img src="assets/belle-vie-logo.png" alt="Belle Vie Wellness logo"></a><div class="links"><a href="#services">Services</a><a href="#peptides">Peptides</a><a href="#why">Why Us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div><a class="btn" href="#contact">Book Now</a></nav></header>
