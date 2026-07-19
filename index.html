@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Belle Vie Wellness | Medical Weight Loss & Peptide Wellness</title>
+  <meta name="description" content="Belle Vie Wellness offers medical weight loss, GLP-1 programs, peptide wellness, and personalized support designed to help patients look better, feel better, and live well." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--teal:#21a0a7;--red:#a70000;--cream:#f7f0f0;--ink:#243033;--muted:#637073;--white:#fff;--shadow:0 22px 60px rgba(24,39,43,.12);--radius:26px}
+    *{box-sizing:border-box} body{margin:0;font-family:Montserrat,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6} a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+    .top{background:var(--teal);color:white;font-size:14px;padding:9px 5vw;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.top a{font-weight:600}
+    header{position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);z-index:10;border-bottom:1px solid rgba(33,160,167,.14)}
+    .nav{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand img{width:250px}.links{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--red);color:white;border-radius:999px;padding:13px 22px;font-weight:800;box-shadow:0 14px 26px rgba(167,0,0,.19)}.btn.alt{background:var(--teal)}
+    .hero{background:linear-gradient(105deg,rgba(247,240,240,.94),rgba(255,255,255,.92)),url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1800&q=80') center/cover;min-height:690px;display:grid;align-items:center}.wrap{max-width:1180px;margin:auto;padding:0 22px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:42px;align-items:center}.eyebrow{color:var(--teal);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:13px}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(44px,6vw,76px);line-height:1.02;margin:16px 0;color:#142124}.hero p{font-size:19px;color:#4d5b5e;max-width:650px}.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:28px}.hero-card{background:white;border-radius:var(--radius);box-shadow:var(--shadow);padding:30px;border:1px solid rgba(33,160,167,.16)}.hero-card img{width:190px;margin:0 auto 12px}.check{display:grid;gap:12px;margin-top:20px}.check div{padding:12px 14px;border-radius:16px;background:var(--cream);font-weight:700}.check span{color:var(--red);margin-right:8px}
+    section{padding:82px 0}.center{text-align:center}.kicker{font-weight:800;color:var(--red);letter-spacing:.16em;text-transform:uppercase;font-size:13px}.title{font-family:'Playfair Display',serif;font-size:clamp(34px,4vw,54px);line-height:1.05;margin:10px 0 18px}.sub{max-width:790px;margin:0 auto;color:var(--muted);font-size:18px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}.card{background:white;border:1px solid rgba(33,160,167,.18);border-radius:var(--radius);padding:28px;box-shadow:0 16px 44px rgba(22,38,42,.07)}.icon{width:54px;height:54px;border-radius:18px;background:var(--cream);display:grid;place-items:center;color:var(--red);font-size:26px;margin-bottom:18px}.card h3{margin:0 0 10px;font-size:21px}.card p{color:var(--muted);margin:0}.cream{background:var(--cream)}
+    .split{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}.photo{border-radius:36px;min-height:460px;background:url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1100&q=80') center/cover;box-shadow:var(--shadow)}.list{display:grid;gap:14px}.list p{background:white;border-left:5px solid var(--teal);padding:16px 18px;border-radius:16px;margin:0;box-shadow:0 8px 22px rgba(23,37,40,.06)}
+    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:34px}.stat{background:var(--teal);color:white;border-radius:22px;padding:26px;text-align:center}.stat strong{font-size:32px;display:block}.peptides .card{position:relative;overflow:hidden}.peptides .card:after{content:"";position:absolute;right:-34px;top:-34px;width:110px;height:110px;background:rgba(33,160,167,.12);border-radius:50%}
+    .testimonial{background:#152326;color:white}.testimonial .sub,.testimonial p{color:rgba(255,255,255,.78)}.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}.quote{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:26px}.quote b{color:white}.quote .stars{color:#ffd166;letter-spacing:3px;margin-bottom:12px}.cta{background:linear-gradient(135deg,var(--teal),#14757b);color:white;border-radius:38px;padding:54px;margin-top:12px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}.cta h2{font-family:'Playfair Display',serif;font-size:42px;margin:0 0 10px}.cta p{margin:0;color:rgba(255,255,255,.86)}
+    .faq{display:grid;gap:14px;max-width:900px;margin:34px auto 0}.faq details{background:white;border-radius:18px;padding:18px 20px;border:1px solid rgba(33,160,167,.18)}.faq summary{font-weight:800;cursor:pointer}.faq p{color:var(--muted)}
+    footer{background:#101a1d;color:white;padding:54px 0 28px}.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}.foot img{width:220px;background:white;border-radius:18px;padding:8px}.foot h4{color:var(--teal);margin:0 0 12px}.foot p,.foot a{color:rgba(255,255,255,.74)}.small{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:20px;color:rgba(255,255,255,.55);font-size:13px}
+
+    .journey-section{background:#fff}
+    .journey-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:42px;align-items:start}
+    .journey-copy{padding:26px 8px}
+    .journey-copy .title{margin-top:10px}
+    .journey-copy p{color:var(--muted);font-size:17px}
+    .journey-highlights{display:grid;gap:12px;margin-top:24px}
+    .journey-highlights div{background:var(--cream);border-left:5px solid var(--teal);border-radius:16px;padding:14px 16px;font-weight:700}
+    .journey-form{background:var(--cream);border:1px solid rgba(33,160,167,.2);border-radius:30px;padding:30px;box-shadow:var(--shadow)}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .field{display:grid;gap:7px}
+    .field.full{grid-column:1/-1}
+    .field label{font-weight:700;font-size:14px}
+    .field input,.field select,.field textarea{width:100%;border:1px solid rgba(36,48,51,.18);border-radius:14px;background:#fff;padding:13px 14px;font:inherit;color:var(--ink)}
+    .field textarea{min-height:120px;resize:vertical}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:3px solid rgba(33,160,167,.16);border-color:var(--teal)}
+    .consent{display:flex;gap:10px;align-items:flex-start;margin:16px 0;color:var(--muted);font-size:13px}
+    .consent input{margin-top:4px}
+    .form-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .form-note{margin-top:14px;color:var(--muted);font-size:12px}
+    @media(max-width:900px){.links{display:none}.brand img{width:210px}.hero-grid,.split,.cta,.foot,.journey-grid{grid-template-columns:1fr}.hero{min-height:auto;padding:72px 0}.cards,.quotes,.stats,.form-grid{grid-template-columns:1fr}.photo{min-height:330px}.cta h2{font-size:34px}}
+  </style>
+</head>
+<body>
+  <div class="top"><span>Medical Weight Loss • Peptide Wellness • Personalized Care</span><a href="tel:9852218707">Call: (985) 221-8707</a></div>
+  <header><nav class="nav"><a class="brand" href="#home"><img src="assets/belle-vie-logo.png" alt="Belle Vie Wellness logo"></a><div class="links"><a href="#services">Services</a><a href="#peptides">Peptides</a><a href="#why">Why Us</a><a href="#faq">FAQ</a><a href="calculator.html">Dosing Calculator</a><a href="#journey">Begin Your Journey</a><a href="#contact">Contact</a></div><a class="btn" href="#book-now">Book Now</a></nav></header>
+
+  <main id="home" class="hero"><div class="wrap hero-grid"><div><div class="eyebrow">Concierge wellness care</div><h1>Look good. Feel good. Live beautifully.</h1><p>Belle Vie Wellness helps patients build sustainable health through medical weight loss, GLP-1 programs, peptide therapies, nutrition guidance, and ongoing support.</p><div class="actions"><a class="btn" href="#book-now">Book Free Consultation</a><a class="btn alt" href="#services">Explore Services</a></div></div><aside class="hero-card"><img src="assets/belle-vie-flower.png" alt="Belle Vie flower mark"><h2>Personalized care that goes beyond the shot.</h2><div class="check"><div><span>✓</span>GLP-1 weight loss options</div><div><span>✓</span>Peptide wellness programs</div><div><span>✓</span>Hands-on coaching and check-ins</div><div><span>✓</span>Compounded through licensed pharmacy partners</div></div></aside></div></main>
+
+  <section id="services"><div class="wrap center"><div class="kicker">Our Services</div><h2 class="title">A modern wellness clinic built around your goals.</h2><p class="sub">From weight loss to energy, recovery, and long-term wellness, Belle Vie creates a plan that fits your body, lifestyle, and desired results.</p><div class="cards"><article class="card"><div class="icon">⚖</div><h3>Medical Weight Loss</h3><p>Provider-guided weight management using GLP-1 options, accountability, lifestyle coaching, and measurable progress tracking.</p></article><article class="card"><div class="icon">✦</div><h3>Peptide Wellness</h3><p>Targeted peptide programs designed to support recovery, inflammation response, body composition, skin health, performance, and vitality.</p></article><article class="card"><div class="icon">♡</div><h3>Longevity Support</h3><p>A whole-person approach to help patients improve energy, confidence, metabolic health, and quality of life.</p></article></div></div></section>
+
+  <section id="why" class="cream"><div class="wrap split"><div class="photo" role="img" aria-label="Wellness clinic consultation"></div><div><div class="kicker">Why Belle Vie</div><h2 class="title">More than medication. A partner in your wellness journey.</h2><p class="sub" style="margin:0 0 26px;text-align:left">We combine clinical oversight with concierge-style support so patients feel informed, encouraged, and cared for every step of the way.</p><div class="list"><p><b>Personalized plans:</b> programs tailored to goals, lifestyle, progress, and tolerance.</p><p><b>Regular check-ins:</b> support to evaluate response, dosing, habits, and next steps.</p><p><b>Holistic guidance:</b> nutrition, movement, recovery, and long-term habit support.</p><p><b>Premium experience:</b> professional, compassionate care in a clean, welcoming environment.</p></div><div class="stats"><div class="stat"><strong>1:1</strong>Guidance</div><div class="stat"><strong>GLP-1</strong>Options</div><div class="stat"><strong>Peptides</strong>Available</div><div class="stat"><strong>Wellness</strong>Focused</div></div></div></div></section>
+
+  <section id="peptides" class="peptides"><div class="wrap center"><div class="kicker">Peptide Programs</div><h2 class="title">Support for recovery, performance, beauty, and vitality.</h2><p class="sub">Belle Vie can offer peptide options alongside weight loss care when appropriate, with education and provider oversight.</p><div class="cards"><article class="card"><h3>Recovery & Inflammation</h3><p>Options commonly used in wellness settings to support soft tissue recovery, joint comfort, and active lifestyles.</p></article><article class="card"><h3>Metabolism & Body Composition</h3><p>Programs that may support fat-loss goals, lean muscle maintenance, appetite management, and metabolic wellness.</p></article><article class="card"><h3>Skin, Hair & Glow</h3><p>Peptides that may support collagen, skin elasticity, appearance, and overall confidence.</p></article><article class="card"><h3>Energy & Cellular Health</h3><p>Wellness options designed to support energy, cellular repair, and healthy aging routines.</p></article><article class="card"><h3>Sleep & Stress Support</h3><p>Protocols that may help improve balance, restoration, and day-to-day wellness habits.</p></article><article class="card"><h3>Personalized Protocols</h3><p>Every peptide plan should be reviewed for fit, goals, contraindications, and patient education.</p></article></div></div></section>
+
+  <section class="testimonial"><div class="wrap center"><div class="kicker">Patient Experience</div><h2 class="title">A boutique wellness experience with real accountability.</h2><p class="sub">Use this section for patient reviews, before-and-after highlights, or success stories once Belle Vie begins collecting testimonials.</p><div class="quotes"><div class="quote"><div class="stars">★★★★★</div><p>“The team made the process simple, encouraging, and personal.”</p><b>- Patient Review</b></div><div class="quote"><div class="stars">★★★★★</div><p>“I finally felt like I had a plan and someone guiding me.”</p><b>- Patient Review</b></div><div class="quote"><div class="stars">★★★★★</div><p>“A clean, professional clinic with a wellness approach that feels different.”</p><b>- Patient Review</b></div></div></div></section>
+
+  <section id="faq" class="cream"><div class="wrap center"><div class="kicker">FAQ</div><h2 class="title">Common Questions</h2><div class="faq"><details><summary>Do you offer GLP-1 weight loss programs?</summary><p>Yes. Belle Vie Wellness can provide provider-guided medical weight loss options, including GLP-1 programs when clinically appropriate.</p></details><details><summary>Do you offer peptides?</summary><p>Yes. Belle Vie Wellness can offer peptide wellness programs in addition to weight loss services. All protocols should be discussed with a provider.</p></details><details><summary>Is this a one-size-fits-all program?</summary><p>No. The goal is a personalized plan based on your goals, progress, health history, and provider recommendations.</p></details><details><summary>How do I start?</summary><p>Book a consultation so the team can review your goals and recommend the right next step.</p></details></div></div></section>
+
+
+  <section id="journey" class="journey-section">
+    <div class="wrap journey-grid">
+      <div class="journey-copy">
+        <div class="kicker">Begin Your Journey</div>
+        <h2 class="title">Tell us how Belle Vie can support your goals.</h2>
+        <p>
+          Share a few basic details and our team will follow up to discuss medical
+          weight loss, peptide wellness, or the next best step for you.
+        </p>
+        <div class="journey-highlights">
+          <div>Personalized guidance based on your goals</div>
+          <div>Convenient phone, text, or email follow-up</div>
+          <div>Direct online booking available when you are ready</div>
+        </div>
+      </div>
+
+      <form
+        class="journey-form"
+        action="https://formspree.io/f/REPLACE_WITH_FORM_ID"
+        method="POST"
+      >
+        <input type="hidden" name="_subject" value="New Belle Vie Wellness Website Inquiry">
+        <input type="hidden" name="_next" value="https://www.bellevwellness.com/thank-you.html">
+
+        <div class="form-grid">
+          <div class="field">
+            <label for="full-name">Full Name</label>
+            <input id="full-name" name="full_name" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" required>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+
+          <div class="field">
+            <label for="contact-method">Preferred Contact Method</label>
+            <select id="contact-method" name="preferred_contact_method" required>
+              <option value="">Select one</option>
+              <option>Email</option>
+              <option>Text</option>
+              <option>Phone call</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="goal">What are you most interested in?</label>
+            <select id="goal" name="primary_interest" required>
+              <option value="">Select one</option>
+              <option>Medical weight loss / GLP-1 program</option>
+              <option>Peptide consultation</option>
+              <option>Recovery, energy, or longevity support</option>
+              <option>General wellness consultation</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="message">How can we help?</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Please share general goals only. Do not include sensitive medical information."
+            ></textarea>
+          </div>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" name="contact_consent" required>
+          <span>
+            I consent to Belle Vie Wellness contacting me by the method selected
+            above. Message and data rates may apply. Consent is not a condition
+            of receiving care.
+          </span>
+        </label>
+
+        <div class="form-actions">
+          <button class="btn" type="submit">Submit Form</button>
+          <a class="btn alt" href="#book-now">Book Your Consultation</a>
+        </div>
+
+        <p class="form-note">
+          This form is for general inquiries and does not replace a medical
+          evaluation. Please do not submit highly sensitive health information.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <section id="contact"><div class="wrap"><div class="cta"><div><h2>Book your consultation today.</h2><p>Ready to feel better, look better, and live beautifully? Contact Belle Vie Wellness to start your personalized plan.</p></div><a class="btn" href="#book-now">Book Now</a></div></div></section>
+
+  <footer><div class="wrap foot"><div><img src="assets/belle-vie-logo.png" alt="Belle Vie Wellness logo"><p>Medical weight loss, peptide wellness, and personalized support for a healthier, more confident life.</p></div><div><h4>Contact</h4><p>Phone: <a href="tel:9852218707">(985) 221-8707</a><br>Email: <a href="mailto:info@bellevwellness.com">info@bellevwellness.com</a><br>Address: 1808 Front St Ste 104 (located inside Sirincci Coffee Co)</p></div><div><h4>Quick Links</h4><p><a href="#services">Services</a><br><a href="#peptides">Peptides</a><br><a href="#why">Why Us</a><br><a href="#faq">FAQ</a><br><a href="calculator.html">Dosing Calculator</a><br><a href="#journey">Begin Your Journey</a><br><a href="#book-now">Book Now</a></p></div></div><div class="wrap"><div class="footer-links" style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px"><a href="privacy-policy.html">Privacy Policy</a><a href="hipaa-notice.html">HIPAA Notice</a><a href="terms.html">Terms &amp; Conditions</a><a href="telehealth-consent.html">Telehealth Consent</a></div><div class="small">© 2026 Belle Vie Wellness. All Rights Reserved. This website is for informational purposes only and does not replace medical advice. Treatment eligibility requires evaluation by a licensed healthcare provider.</div></div></footer>
+
+  <!-- Boulevard Self-Booking Overlay -->
+  <script>
+    (function (a) {
+      var b = {
+        businessId: 'f0fcc55e-cf56-4222-ad6d-5a7b49a70218'
+      };
+
+      var c = a.createElement('script');
+      var d = a.querySelector('script');
+
+      c.src = 'https://static.joinboulevard.com/injector.min.js';
+      c.async = true;
+      c.onload = function () {
+        if (window.blvd) {
+          window.blvd.init(b);
+        }
+      };
+
+      d.parentNode.insertBefore(c, d);
+    })(document);
+  </script>
+  <!-- End Boulevard Self-Booking Overlay -->
+</body>
+</html>
