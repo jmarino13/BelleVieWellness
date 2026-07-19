@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dosing Calculator | Belle Vie Wellness</title>
+  <meta
+    name="description"
+    content="Belle Vie Wellness dosing calculator for converting a prescribed dose into medication volume and syringe units."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --teal: #21a0a7;
+      --teal-deep: #0e5f64;
+      --teal-dark: #0c272a;
+      --red: #a70000;
+      --cream: #f7f0f0;
+      --white: #ffffff;
+      --ink: #eef7f7;
+      --muted: #a9c4c6;
+      --panel: #102f33;
+      --panel-2: #163a3f;
+      --border: rgba(159, 220, 223, 0.22);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Montserrat, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(33, 160, 167, 0.16), transparent 34%),
+        linear-gradient(180deg, #081d20 0%, #0b2528 100%);
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      background: rgba(7, 24, 27, 0.94);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-logo {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      background: var(--cream);
+      border-radius: 50%;
+      padding: 8px;
+    }
+
+    .brand-name {
+      color: var(--white);
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-pill {
+      padding: 12px 20px;
+      border: 1px solid rgba(33, 160, 167, 0.55);
+      border-radius: 999px;
+      background: rgba(33, 160, 167, 0.12);
+      color: var(--white);
+    }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 22px 54px;
+    }
+
+    .calculator-shell {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: linear-gradient(145deg, rgba(14, 44, 48, 0.98), rgba(8, 29, 32, 0.98));
+      box-shadow: var(--shadow);
+    }
+
+    .section-title {
+      margin: 0 0 22px;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      color: var(--white);
+    }
+
+    .field {
+      margin-bottom: 22px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--white);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .field input,
+    .field select {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid rgba(168, 208, 211, 0.26);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.045);
+      color: var(--white);
+      font: inherit;
+      font-size: 16px;
+      outline: none;
+    }
+
+    .field select option {
+      color: #18282b;
+      background: #ffffff;
+    }
+
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(33, 160, 167, 0.14);
+    }
+
+    .helper {
+      margin-top: 7px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: 999px;
+      padding: 13px 26px;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.18s ease, opacity 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+      box-shadow: 0 12px 24px rgba(33, 160, 167, 0.22);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(168, 208, 211, 0.35);
+    }
+
+    .tip {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .results {
+      display: grid;
+      gap: 16px;
+    }
+
+    .result-card {
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.025));
+    }
+
+    .result-label {
+      margin-bottom: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .result-value {
+      color: var(--white);
+      font-size: 28px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .result-note {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .disclaimer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    .disclaimer strong {
+      color: var(--white);
+    }
+
+    footer {
+      padding: 26px 22px 36px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+
+      .calculator-shell {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+
+      .brand-name {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img
+          class="brand-logo"
+          src="assets/belle-vie-flower.png"
+          alt="Belle Vie Wellness"
+        >
+        <span class="brand-name">Belle Vie Wellness</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#peptides">Peptides</a>
+        <a href="index.html#journey">Begin Your Journey</a>
+        <a class="nav-pill" href="calculator.html">Dosing Calculator</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="calculator-shell" aria-labelledby="calculator-heading">
+      <div>
+        <h1 id="calculator-heading" class="section-title">Inputs</h1>
+
+        <div class="field">
+          <label for="vialMg">Vial content (total medication in vial)</label>
+          <input
+            id="vialMg"
+            type="number"
+            min="0"
+            step="any"
+            value="10"
+            inputmode="decimal"
+          >
+          <div class="helper">Example: 10 mg in the vial</div>
+        </div>
+
+        <div class="field">
+          <label for="waterMl">Total diluent added (mL)</label>
+          <input
+            id="waterMl"
+            type="number"
+            min="0"
+            step="any"
+            value="2"
+            inputmode="decimal"
+          >
+          <div class="helper">Example: add 2.0 mL bacteriostatic water</div>
+        </div>
+
+        <div class="field">
+          <label for="doseMg">Target dose per injection (mg)</label>
+          <input
+            id="doseMg"
+            type="number"
+            min="0"
+            step="any"
+            value="0.25"
+            inputmode="decimal"
+          >
+          <div class="helper">Example: 0.25 mg</div>
+        </div>
+
+        <div class="field">
+          <label for="syringeScale">Syringe/pen scale</label>
+          <select id="syringeScale">
+            <option value="100" selected>U-100 (1.0 mL = 100 units)</option>
+            <option value="50">U-50 (1.0 mL = 50 units)</option>
+            <option value="40">U-40 (1.0 mL = 40 units)</option>
+          </select>
+          <div class="helper">Choose how your device is labeled</div>
+        </div>
+
+        <div class="button-row">
+          <button class="btn btn-primary" type="button" onclick="calculateDose()">
+            Calculate
+          </button>
+          <button class="btn btn-secondary" type="button" onclick="resetCalculator()">
+            Reset
+          </button>
+        </div>
+
+        <div class="tip">
+          Tip: If your protocol is in mcg, convert to mg first
+          (1,000 mcg = 1 mg).
+        </div>
+      </div>
+
+      <div>
+        <h2 class="section-title">Results</h2>
+
+        <div class="results" aria-live="polite">
+          <div class="result-card">
+            <div class="result-label">Concentration</div>
+            <div id="concentration" class="result-value">5.000 mg/mL</div>
+            <div class="result-note">mg per mL</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">Volume per dose</div>
+            <div id="volume" class="result-value">0.050 mL</div>
+            <div class="result-note">mL to draw</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">Units / marks</div>
+            <div id="units" class="result-value">5.0 units/marks</div>
+            <div class="result-note">based on your selected scale</div>
+          </div>
+
+          <div class="result-card">
+            <div class="result-label">Estimated doses per vial</div>
+            <div id="doses" class="result-value">40.0 doses</div>
+            <div class="result-note">approximate</div>
+          </div>
+        </div>
+
+        <div class="disclaimer">
+          <strong>Disclaimer:</strong> This calculator is for educational
+          purposes only and does not constitute medical advice. Compounded or
+          reconstituted products and devices vary. Always follow prescribing
+          instructions and verify the calculation with your licensed clinician
+          or dispensing pharmacy before administration.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Belle Vie Wellness ·
+    <a href="index.html">Return to the main website</a>
+  </footer>
+
+  <script>
+    function format(value, decimals) {
+      return Number(value).toFixed(decimals);
+    }
+
+    function calculateDose() {
+      const vialMg = Number(document.getElementById("vialMg").value);
+      const waterMl = Number(document.getElementById("waterMl").value);
+      const doseMg = Number(document.getElementById("doseMg").value);
+      const syringeScale = Number(document.getElementById("syringeScale").value);
+
+      if (
+        !Number.isFinite(vialMg) ||
+        !Number.isFinite(waterMl) ||
+        !Number.isFinite(doseMg) ||
+        !Number.isFinite(syringeScale) ||
+        vialMg <= 0 ||
+        waterMl <= 0 ||
+        doseMg <= 0 ||
+        syringeScale <= 0
+      ) {
+        alert("Please enter valid numbers greater than zero.");
+        return;
+      }
+
+      const concentration = vialMg / waterMl;
+      const volume = doseMg / concentration;
+      const units = volume * syringeScale;
+      const doses = vialMg / doseMg;
+
+      document.getElementById("concentration").textContent =
+        `${format(concentration, 3)} mg/mL`;
+
+      document.getElementById("volume").textContent =
+        `${format(volume, 3)} mL`;
+
+      document.getElementById("units").textContent =
+        `${format(units, 1)} units/marks`;
+
+      document.getElementById("doses").textContent =
+        `${format(doses, 1)} doses`;
+    }
+
+    function resetCalculator() {
+      document.getElementById("vialMg").value = "10";
+      document.getElementById("waterMl").value = "2";
+      document.getElementById("doseMg").value = "0.25";
+      document.getElementById("syringeScale").value = "100";
+      calculateDose();
+    }
+
+    calculateDose();
+  </script>
+</body>
+</html>
